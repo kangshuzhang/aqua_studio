@@ -16,15 +16,19 @@ def diary(request):
     date4=today+datetime.timedelta(days=-4)
     date5=today+datetime.timedelta(days=-5)
     date6=today+datetime.timedelta(days=-6)
-    contamination1=contamination.objects.get(date=date1)
+    contamination1=contamination.objects.get(date=today)
     web_page=render(request,'diary.html',{'contamination':contamination1,'today':today,'date1':date1,'date2':date2,'date3':date3,'date4':date4,'date5':date5,'date6':date6})
     return web_page
 def diary2(request):
     today=datetime.date.today()
-    delta = datetime.timedelta(days=-1)
-    date=today+delta
-    contamination1=contamination.objects.get(date=date)
-    web_page=render(request,'diary2.html',{'contamination':contamination1,'date':date})
+    date1=today+datetime.timedelta(days=-1)
+    date2=today+datetime.timedelta(days=-2)
+    date3=today+datetime.timedelta(days=-3)
+    date4=today+datetime.timedelta(days=-4)
+    date5=today+datetime.timedelta(days=-5)
+    date6=today+datetime.timedelta(days=-6)
+    contamination1=contamination.objects.get(date=date1)
+    web_page=render(request,'diary2.html',{'contamination':contamination1,'today':today,'date1':date1,'date2':date2,'date3':date3,'date4':date4,'date5':date5,'date6':date6})
     return web_page
 def diary3(request):
     today=datetime.date.today()
@@ -69,4 +73,6 @@ def data(request):
     picture.line(a, b, color='blue', alpha=0.5)
     script, div = components(picture, CDN)
     return render(request, 'data.html', {'script': script, 'div': div})
+def contact(request):
+    return render(request, 'contact.html')
 # Create your views here.

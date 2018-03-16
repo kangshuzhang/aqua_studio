@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from studio import views as studio_views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('home/', studio_views.home),
+    path('admin/', admin.site.urls,name='admin'),
+    path('home/', studio_views.home,name='home'),
     path('diary/', studio_views.diary,name='diary'),
     path('diary2/', studio_views.diary2,name='diary2'),
     path('diary3/', studio_views.diary3,name='diary3'),
@@ -27,4 +27,6 @@ urlpatterns = [
     path('diary6/', studio_views.diary6,name='diary6'),
     path('diary7/', studio_views.diary7,name='diary7'),
     path('data/', studio_views.data,name='data'),
+    path('contact/', studio_views.contact,name='contact'),
+
 ]
