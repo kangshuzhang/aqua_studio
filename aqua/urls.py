@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from studio import views as studio_views
+from django.conf.urls.static import static  
+from django.conf import settings 
 urlpatterns = [
     path('admin/', admin.site.urls,name='admin'),
     path('home/', studio_views.home,name='home'),
@@ -27,6 +29,12 @@ urlpatterns = [
     path('diary6/', studio_views.diary6,name='diary6'),
     path('diary7/', studio_views.diary7,name='diary7'),
     path('data/', studio_views.data,name='data'),
+    path('data_concentration/', studio_views.data_concentration,name='data_concentration'),
+    path('data_concentration2/', studio_views.data_concentration2,name='data_concentration2'),
+    path('data_concentration3/', studio_views.data_concentration3,name='data_concentration3'),
+    path('data_advance/', studio_views.data_advance,name='data_advance'),
     path('contact/', studio_views.contact,name='contact'),
+    path('intelligence/', studio_views.intelligence,name='intelligence'),
+    path('intelligence2/', studio_views.intelligence2,name='intelligence2'),
 
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 

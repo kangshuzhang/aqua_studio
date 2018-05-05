@@ -25,7 +25,7 @@ SECRET_KEY = 'qbts3tr-hs+lk38t7tb(m-l=a)usky(d5qmzy(pcvp(i$!k(7*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','139.196.84.157','zhangks.xyz']
+ALLOWED_HOSTS = ['127.0.0.1','139.196.84.157','zhangks.xyz','192.168.43.19']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'studio',
     'gunicorn',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
