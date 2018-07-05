@@ -1,0 +1,35 @@
+#ad{  
+    width:960px;  
+    height:600px;  
+    position:absolute;  
+}  
+/*取消小圆点*/  
+#ad li{  
+    list-style:none;  
+}  
+  
+#ad_img li{  
+    display:none;  
+}  
+  
+/*角落显示数字的ul*/  
+#ad_num{  
+    overflow:hidden;  
+    position:absolute;  
+    bottom:10px;  
+    right:10px;  
+    color:#FFF;  
+}  
+/*数字的浮动*/  
+#ad_num li{  
+    border:#FFF solid 1px;  
+    float:left;  
+    margin:0px 5px;  
+    padding:3px 10px;  
+}  
+.numsover{  
+    background-color:#CF3;  
+    color:#F00;  
+}  
+  
+.numsout{}  

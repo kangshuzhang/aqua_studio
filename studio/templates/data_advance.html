@@ -1,0 +1,64 @@
+{%load staticfiles%}
+<html>
+    <head>
+        <link href=" {%static './semantic.css'%}" rel="stylesheet" type="text/css">
+        <script src=" {%static './jquery.min.js'%}"></script>
+        <script src=" {%static './semantic.js'%}"></script>
+        
+        
+        <title>AQUA STUDIO/Data</title>
+    </head>
+    <body>
+        <div class="ui grid">
+            <div class="ui four wide column">
+               <div class="ui inverted vertical menu">
+                   <div class="item">
+                       <h1><P><IMG  src="{% static './imagine/waterdrop.png'%}"  align=left border=0>AQUA STUDIO<BR>&nbsp;<BR clear=left></h1>
+                        <a href="/home" class="item"><b>HOME</b> </a>
+                        <a href="/diary" class="item"><b>DIARY</b></a>
+                        <a href="/data" class="item"><b>DATA</b></a>
+                        <a href="/intelligence" class="item"><b>INTELLIGENCE</b> </a>
+                        <a href="/contact" class="item"><b>CONTACT</b> </a>
+                   </div>
+               <div class="active item">
+                    <div class="header"> <h3>Realtime Monitoring</h3></div>
+                    <div class="menu">
+                      <a href="/data"class="item"> <h4>pH</h4> </a>
+                      <a href="/data"class="item"> <h4>Dissolve Oxygen</h4> </a>
+                      <a href="/data"class="item"> <h4>Reflux</h4> </a>
+                      <a href="/data"class="item"> <h4>Influent</h4> </a>
+                      <a href="/data"class="item"> <h4>Temperature</h4></a>
+                    </div>
+            </div>
+            <div class="item">
+              <div class="header"> <h3>Biodegradation</h3></div>
+              <div class="menu">
+                <a href="/data_concentration2"class="item"> <h4>Ammonia</h4> </a>
+                <a href="/data_concentration3"class="item"> <h4>Nitrite</h4> </a>
+                <a href="/data_concentration4"class="item"> <h4>Nitrate</h4></a>
+                <a href="/data_concentration"class="item"> <h4>Chemical Oxygen Demand</h4></a>
+              </div>
+            </div>
+         
+            <div class="item">
+                    <div class="header"> <h3>Advanced Data</h3></div>
+                    <div class="menu">
+                      <a href="/data_advance"class="item"> <h4>Nitrification</h4> </a>
+                      <a href="/data_advance"class="item"> <h4>Denitrification</h4> </a>
+                      <a href="/data_advance"class="item"> <h4>Sludge Performance</h4></a>
+                    </div>
+            </div>
+            
+          </div>  
+        </div>
+        <div class="ui eleven wide column">
+
+          <div class="ui vertical segment"><div height="80%" width="100%" > {{ script |safe}} </div></div>
+       
+        </div>
+        <div class="ui one wide column">         
+        </div>
+    </div>
+       
+    </body>
+</html>

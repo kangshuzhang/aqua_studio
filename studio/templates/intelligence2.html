@@ -1,25 +1,31 @@
+{%load staticfiles%}
 <html>
     <head>
-            <link href="./semantic.css" rel="stylesheet" type="text/css">
-            <script src="./jquery.min.js"></script>
-            <script src="./semantic.js"></script>
-            <title>AQUA Stuido/Contact</title>
+            <link href=" {%static './semantic.css'%}" rel="stylesheet" type="text/css">
+            <script src=" {%static './jquery.min.js'%}"></script>
+            <script src=" {%static './semantic.js'%}"></script>
+            <link href="{% static './css/bokeh.min.css' %}" rel="stylesheet" type="text/css">
+            <link href="{% static './css/bokeh-widgets.min.css' %}" rel="stylesheet" type="text/css">
+            <script src="{% static './js/bokeh.min.js' %}"></script>
+            <script src="{% static './js/bokeh-widgets.min.js' %}"></script>
+            <title>AQUA STUDIO/Intelligence</title>
+            {{ script |safe }}
     </head>
     <body>
         <div class="ui vertical inverted segment">  
             <div class="ui fixed inverted borderless menu">
                         <div class="ui imagine">
-                        <img src="./imagine/waterdrop.png" alt="">
+                        <img src="{% static './imagine/waterdrop.png'%}"  alt="">
                          </div>
                     <a href="#" class="item"><h1>AQUA STUDIO</h1></a>
-                    <div class="right menu"><a href="./home.html" class="item"><b>HOME</b> </a>
-                    <a href="./diary.html" class="item"><b>DIARY</b></a>
-                    <a href="./data.html" class="item"><b>DATA</b></a>
-                    <a href="./intelligence.html" class="item"><b>INTELLIGENCE</b> </a>
-                    <a href="./contact.html" class="item"><b>CONTACT</b> </a>
+                    <div class="right menu"><a href="/home" class="item"><b>HOME</b> </a>
+                    <a href="/diary" class="item"><b>DIARY</b></a>
+                    <a href="/data" class="item"><b>DATA</b></a>
+                    <a href="/intelligence" class="item"><b>INTELLIGENCE</b> </a>
+                    <a href="/contact" class="item"><b>CONTACT</b> </a>
                     <a href="#" class="item">
                             <div class="ui imagine">
-                            <img src="./imagine/glass.png" alt="">
+                            <img src="{%static './imagine/glass.png'%}"alt="">
                              </div>
                     </a>
                 </div>   
@@ -31,12 +37,88 @@
             <div class="ui one wide column"></div>
             <div class="ui fourteen wide column">
                 <div class="ui top attached tabular  blue menu">
-                <a href="./intelligence.html" class="item "><h3>Soft Sensor</h3>  </a>
-                <a href="./intelligence2.html"class="active item"><h3>Process Prediction</h3>  </a>
-                <a href="./intelligence3.html"class="item"><h3>Fault Diagnosis</h3>  </a>
+                  <a href="/intelligence" class="item "><h3>Soft Sensor</h3>  </a>
+                  <a href="/intelligence2" class="active item "><h3>Fault Diagnosis</h3>  </a>
               </div>
-              <div class="ui bottom attached segment">
-                <p></p>
+              <div class="ui segment">
+                    <div class="ui grid">
+                        <div class="ui seven wide column">
+                            <div style="width:100%">{{div |safe }}</div>
+                        </div>
+                        <div class="ui nine wide column">
+                            <table class="ui celled structured table">
+                                <thead>
+                                  <tr>
+                                    <th rowspan="2"><h3>Item</h3> </th>
+                                    <th rowspan="2"><h3>Description</h3> </th>
+                                    <th colspan="2"><h3>Condition</h3></th>
+                                  </tr>
+                                  <tr>
+                                    <th>Normal</th>
+                                    <th>Abnormal</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Blocking</td>
+                                    <td>The entire transforming progress is smooth.</td>
+
+                                    <td class="center aligned">
+                                      <i class="large green checkmark icon"></i>
+                                    </td>
+                                    <td></td>
+
+                                  </tr>
+                                  <tr>
+                                    <td >Aeration</td>
+                                    <td>The dissolve oxygen is well-balanced.</td>
+
+                                    <td class="center aligned">
+                                      <i class="large green checkmark icon"></i>
+                                    </td>
+                                    <td></td>
+
+                                  </tr>
+                                  <tr>
+                                    <td >Reflux Ratio</td>
+                                    <td> The reflux ratio is resonable for feeding rate.</td>
+
+                                    <td class="center aligned">
+                                      <i class="large green checkmark icon"></i>
+                                    </td>
+                                    <td></td>
+
+                                  </tr>
+                                  <tr>
+                                    <td >Sludge Bulking</td>
+                                    <td> Sludge character is productive.</td>
+
+                                    <td class="center aligned">
+                                      <i class="large green checkmark icon"></i>
+                                    </td>
+                                    <td></td>
+
+                                  </tr>
+                                  <tr>
+                                    <td >Effluent</td>
+                                    <td>Effluent can be expected to reach the discharge standard.</td>
+
+                                    <td class="center aligned">
+                                      <i class="large green checkmark icon"></i>
+                                    </td>
+                                    <td></td>
+
+                                  </tr>
+                                  
+                                    
+                                </tbody>
+                              </table>
+                            
+                        </div>
+                    </div>
+            </div>
+            <div class="ui bottom attached segment">
+               <h2>Tips</h2>
             </div>
             </div>
             <div class="ui one wide column"></div>
@@ -51,17 +133,17 @@
                         <div class=" ui four wide column">
                                 <div class="ui inverted vertical text menu">
                                     <div class="item">
-                                        <h3>AQUA Studio</h3> 
+                                        <h3>AQUA STUDIO</h3> 
                                     </div>
-                                    <a href="./home.html" class="item"><p>Home</p></a>
+                                    <a href="/home" class="item"><p>Home</p></a>
                                     
-                                    <a href="./diary.html" class="item"><p>Diary</p></a>
+                                    <a href="/diary" class="item"><p>Diary</p></a>
                                    
-                                    <a href="./data.html" class="item"><p>Data</p></a>
+                                    <a href="/data" class="item"><p>Data</p></a>
                                     
-                                    <a href="./intelligence.html" class="item"><p>Intelligence</p></a>
+                                    <a href="/intelligence" class="item"><p>Intelligence</p></a>
                                     
-                                    <a href="./contact.html" class="item"><p>Contact</p></a>
+                                    <a href="/contact" class="item"><p>Contact</p></a>
                                     
                                 </div>
                         </div>

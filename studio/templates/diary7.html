@@ -1,0 +1,143 @@
+{%load staticfiles%}
+<html>
+    <head>
+        <link href=" {%static './semantic.css'%}"  rel="stylesheet" type="text/css">
+        <script src=" {%static './jquery.min.js'%}"></script>
+        <script src=" {%static './semantic.js'%}"></script>
+        <title>AQUA Stuido/Diary</title>
+    </head>
+    <body>
+        <div class="ui grid">
+            <div class="ui four wide column">
+               <div class="ui inverted vertical menu">
+                   <div class="item">
+                       <h1><P><IMG  src="{%static './imagine/waterdrop.png'%}"  align=left border=0>AQUA STUDIO<BR>&nbsp;<BR clear=left></h1>
+                        <a href="/home" class="item"><b>HOME</b> </a>
+                        <a href="/diary" class="item"><b>DIARY</b></a>
+                        <a href="/data" class="item"><b>DATA</b></a>
+                        <a href="/intelligence" class="item"><b>INTELLIGENCE</b> </a>
+                        <a href="/contact" class="item"><b>CONTACT</b> </a>
+                        <a class="item">
+                            <a class="header"><h3>Date</h3> </a>
+                            
+                        <a href="/diary" class=" item"><h4>{{today}}</h4> </a>
+                        <a href="/diary2" class="item"><h4>{{date1}}</h4> </a>
+                        <a href="/diary3" class="item"><h4>{{date2}}</h4> </a>
+                        <a href="/diary4" class="item"><h4>{{date3}}</h4> </a>
+                        <a href="/diary5" class="item"><h4>{{date4}}</h4> </a>
+                        <a href="/diary6" class="item"><h4>{{date5}}</h4> </a>
+                        <a href="/diary7" class="ui active item"><h4>{{date6}}</h4> </a></a>
+                        
+               </div>
+             </div>  
+        </div>
+        <div class="ui eleven wide column">
+                <div class="ui vertical padded segment">
+                    <div class="ui center aligned header">Record Table __ ({{date6}}) {{a}}</div>
+                <div class="ui vertical segment">
+                    <table class="ui blue table">
+                        <thead>
+                          <tr><th class="four wide"></th>
+                          <th>If</th>
+                          <th>A</th>
+                          <th>O1</th>
+                          <th>O2</th>
+                          <th>O3</th>
+                          <th>O4</th>
+                          <th>Ef</th>
+                        </tr></thead>
+                        <tbody>
+                          <tr>
+                            <td>Temperature(℃)</td>
+                            <td>/</td>
+                            <td>{{ contamination.A_Tem }}</td>
+                            <td>{{ contamination.O1_Tem }}</td>
+                            <td>{{ contamination.O2_Tem }}</td>
+                            <td>{{ contamination.O3_Tem }}</td>
+                            <td>{{ contamination.O4_Tem }}</td>
+                            <td>/</td>
+                          </tr>
+                          <tr>
+                                <td>pH</td>
+                                <td>/</td>
+                                <td>{{ contamination.A_pH }}</td>
+                                <td>{{ contamination.O1_pH }}</td>
+                                <td>{{ contamination.O2_pH }}</td>
+                                <td>{{ contamination.O3_pH }}</td>
+                                <td>{{ contamination.O4_pH }}</td>
+                                <td>/</td>
+                          </tr>
+                          <tr>
+                                <td>Disolve Oxygen(mg/L)</td>
+                                <td>/</td>
+                                <td>/</td>
+                                <td>{{ contamination.O1_Do }}</td>
+                                <td>{{ contamination.O2_Do }}</td>
+                                <td>{{ contamination.O3_Do }}</td>
+                                <td>{{ contamination.O4_Do }}</td>
+                                <td>/</td>
+                              </tr>
+                              <tr>
+                                    <td>COD(mg/L)</td>
+                                    <td>{{ contamination.If_COD }}</td>
+                                    <td>{{ contamination.A_COD }}</td>
+                                    <td>{{ contamination.O1_COD }}</td>
+                                    <td>{{ contamination.O2_COD }}</td>
+                                    <td>{{ contamination.O3_COD }}</td>
+                                    <td>{{ contamination.O4_COD }}</td>
+                                    <td>{{ contamination.Ef_COD }}</td>
+                                  </tr>
+                                  <tr>
+                                        <td>Ammonia(mg/L)</td>
+                                        <td>{{ contamination.If_NH4 }}</td>
+                                        <td>{{ contamination.A_NH4 }}</td>
+                                        <td>{{ contamination.O1_NH4 }}</td>
+                                        <td>{{ contamination.O2_NH4 }}</td>
+                                        <td>{{ contamination.O3_NH4 }}</td>
+                                        <td>{{ contamination.O4_NH4 }}</td>
+                                        <td>{{ contamination.Ef_NH4 }}</td>
+                                      </tr>
+                                      <tr>
+                                            <td>Nitrite(mg/L)</td>
+                                            <td>{{ contamination.If_NO2 }}</td>
+                                            <td>{{ contamination.A_NO2 }}</td>
+                                            <td>{{ contamination.O1_NO2 }}</td>
+                                            <td>{{ contamination.O2_NO2 }}</td>
+                                            <td>{{ contamination.O3_NO2 }}</td>
+                                            <td>{{ contamination.O4_NO2 }}</td>
+                                            <td>{{ contamination.Ef_NO2 }}</td>
+                                          </tr>
+                                          <tr>
+                                                <td>Nitrate(mg/L)</td>
+                                                <td>{{ contamination.If_NO3 }}</td>
+                                                <td>{{ contamination.A_NO3 }}</td>
+                                                <td>{{ contamination.O1_NO3 }}</td>
+                                                <td>{{ contamination.O2_NO3 }}</td>
+                                                <td>{{ contamination.O3_NO3 }}</td>
+                                                <td>{{ contamination.O4_NO3 }}</td>
+                                                <td>{{ contamination.Ef_NO3 }}</td>
+                                              </tr>
+                                              <tr>
+                                                    <td>MLSS(mg/L)</td>
+                                                    <td>/</td>
+                                                    <td>{{ contamination.A_MLSS }}</td>
+                                                    <td>{{ contamination.O1_MLSS }}</td>
+                                                    <td>{{ contamination.O2_MLSS }}</td>
+                                                    <td>{{ contamination.O3_MLSS }}</td>
+                                                    <td>{{ contamination.O4_MLSS }}</td>
+                                                    <td>/</td>
+                                                  </tr>      
+                        </tbody>
+                      </table>
+                    </div>
+                </div>
+                <div class="ui vertical padded segment">
+                    <div class="ui header">Daily Report</div>
+                    <div class="ui segment"><p>{{ contamination.Statement }}</p> </div>
+                </div>
+                
+        </div>
+    </div>
+       
+    </body>
+</html>

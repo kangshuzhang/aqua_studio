@@ -1,25 +1,32 @@
+{%load staticfiles%}
 <html>
     <head>
-            <link href="./semantic.css" rel="stylesheet" type="text/css">
-            <script src="./jquery.min.js"></script>
-            <script src="./semantic.js"></script>
+            <link href=" {%static './semantic.css'%}" rel="stylesheet" type="text/css">
+            <script src=" {%static './jquery.min.js'%}"></script>
+            <script src=" {%static './semantic.js'%}"></script>
             <title>AQUA Stuido/Contact</title>
+            <meta charset="utf-8">
+            <script src="http://oog4yfyu0.bkt.clouddn.com/echarts.min.js"></script>
+            <script src="http://oog4yfyu0.bkt.clouddn.com/echarts-gl.js"></script>
+            <script type="text/javascript " src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+            <script type="text/javascript " src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+            <script type="text/javascript " src="http://oog4yfyu0.bkt.clouddn.com/wordcloud.js"></script>
     </head>
     <body>
         <div class="ui vertical inverted segment">  
             <div class="ui fixed inverted borderless menu">
                         <div class="ui imagine">
-                        <img src="./imagine/waterdrop.png" alt="">
+                        <img src="{% static './imagine/waterdrop.png'%}" alt="">
                          </div>
                     <a href="#" class="item"><h1>AQUA STUDIO</h1></a>
-                    <div class="right menu"><a href="./home.html" class="item"><b>HOME</b> </a>
-                    <a href="./diary.html" class="item"><b>DIARY</b></a>
-                    <a href="./data.html" class="item"><b>DATA</b></a>
-                    <a href="./intelligence.html" class="item"><b>INTELLIGENCE</b> </a>
-                    <a href="./contact.html" class="item"><b>CONTACT</b> </a>
+                    <div class="right menu"><a href="/home" class="item"><b>HOME</b> </a>
+                    <a href="/diary" class="item"><b>DIARY</b></a>
+                    <a href="/data" class="item"><b>DATA</b></a>
+                    <a href="/intelligence" class="item"><b>INTELLIGENCE</b> </a>
+                    <a href="/contact" class="item"><b>CONTACT</b> </a>
                     <a href="#" class="item">
                             <div class="ui imagine">
-                            <img src="./imagine/glass.png" alt="">
+                            <img src="{% static './imagine/glass.png'%}" alt="">
                              </div>
                     </a>
                 </div>   
@@ -31,18 +38,68 @@
             <div class="ui one wide column"></div>
             <div class="ui fourteen wide column">
                 <div class="ui top attached tabular  blue menu">
-                <a href="./intelligence.html" class="active item "><h3>Soft Sensor</h3>  </a>
-                <a href="./intelligence2.html"class="item"><h3>Process Prediction</h3>  </a>
-                <a href="./intelligence3.html"class="item"><h3>Fault Diagnosis</h3>  </a>
+                <a href="/intelligence" class="active item "><h3>Soft Sensor</h3>  </a>
+                <a href="/intelligence2" class="item "><h3>Fault Diagnosis</h3>  </a>
               </div>
-              <div class="ui bottom attached segment">
-                <p> 
-                </p>
+              <div class="ui segment">
+                    
+                  <div class="ui vertical segment">
+                      <div class="ui two column grid">
+                            <div class="column">
+                              <div class="ui segment" >
+                                    {{ myechart1|safe }}
+                              </div>
+                            </div>
+                            <div class="column">
+                              <div class="ui segment" >
+                                    {{ myechart2|safe }}
+                              </div>
+                            </div>
+                            
+                          </div>
+                  </div>
+                  <div class="ui vertical segment">
+                    <div class="ui two column grid">
+                          <div class="column">
+                            <div class="ui segment" >
+                                  {{ myechart3|safe }}
+                            </div>
+                          </div>
+                          <div class="column">
+                            <div class="ui segment" >
+                                  {{ myechart4|safe }}
+                            </div>
+                          </div>
+                          
+                        </div>
+                </div>
+                <div class="ui vertical segment">
+                    <div class="ui two column grid">
+                          <div class="column">
+                            <div class="ui segment" >
+                                  {{ myechart5|safe }}
+                            </div>
+                          </div>
+                    
+                          
+                        </div>
+                </div>
+                
+                <div class="ui vertical segment">
+                    {{ myechart6|safe }}
+                        </div>
+                  
+                    <div class="ui vertical segment">
+                        {{ myechart10|safe }}
+                            </div>
+                    </div>
+                  
+                
+            </div><div class="ui one wide column"></div>
             </div>
-            </div>
-            <div class="ui one wide column"></div>
+            
         </div>
-        </div>
+        
        
         
         <div class="ui inverted vertical segment">
@@ -52,17 +109,17 @@
                         <div class=" ui four wide column">
                                 <div class="ui inverted vertical text menu">
                                     <div class="item">
-                                        <h3>AQUA Studio</h3> 
+                                        <h3>AQUA STUDIO</h3> 
                                     </div>
-                                    <a href="./home.html" class="item"><p>Home</p></a>
+                                    <a href="/home" class="item"><p>Home</p></a>
                                     
-                                    <a href="./diary.html" class="item"><p>Diary</p></a>
+                                    <a href="/diary" class="item"><p>Diary</p></a>
                                    
-                                    <a href="./data.html" class="item"><p>Data</p></a>
+                                    <a href="/data" class="item"><p>Data</p></a>
                                     
-                                    <a href="./intelligence.html" class="item"><p>Intelligence</p></a>
+                                    <a href="/intelligence" class="item"><p>Intelligence</p></a>
                                     
-                                    <a href="./contact.html" class="item"><p>Contact</p></a>
+                                    <a href="/contact" class="item"><p>Contact</p></a>
                                     
                                 </div>
                         </div>
